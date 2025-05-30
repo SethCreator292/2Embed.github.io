@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Shadow</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      background: black;
+    }
+  </style>
+</head>
+<body>
+  <iframe id="embed" 
+          src="https://www.2embed.cc/" 
+          style="border: 0; margin: 0; padding: 0; width: 100vw; height: 100vh;"
+          sandbox="allow-scripts allow-forms allow-same-origin allow-presentation allow-top-navigation-by-user-activation"
+          allowfullscreen>
+  </iframe>
+
+  <script>
+    // Prevent popup windows
+    window.open = function () {
+      console.warn("Popup blocked by custom ad-blocker.");
+      return null;
+    };
+
+    document.addEventListener("click", function (e) {
+      // Prevent common popup triggers
+      if (e.target && (e.target.tagName === "A" || e.target.tagName === "IMG")) {
+        const href = e.target.getAttribute("href");
+        if (href && href.match(/(popup|ads|doubleclick|tracker|click)/i)) {
+          e.preventDefault();
+          console.warn("Blocked a suspicious link.");
+        }
+      }
+    }, true);
+  </script>
+</body>
+</html>
