@@ -11,9 +11,34 @@
       overflow: hidden;
       background: black;
     }
+
+    #download-btn {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      z-index: 9999;
+      background: #28a745;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    #download-btn:hover {
+      background-color: #218838;
+    }
   </style>
 </head>
 <body>
+  <!-- Download Button -->
+  <a id="download-btn" href="https://www.myinstants.com/media/sounds/vine-boom.mp3" download="vine-boom.mp3">
+    Download Vine Boom
+  </a>
+
+  <!-- Iframe to myinstants.com -->
   <iframe id="embed" 
           src="https://myinstants.com/" 
           style="border: 0; margin: 0; padding: 0; width: 100vw; height: 100vh;"
